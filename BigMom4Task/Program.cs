@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace BigMom4Task
+namespace GMA4Task
 {
     class Program
     {
@@ -176,7 +176,7 @@ namespace BigMom4Task
                         if (keysinsideChest != splitted.Length - 2) throw new ApplicationException("Wrong");
 
                         chests_keysInside[i] = new List<int>();
-                        for (int j = 0; j < keysinsideChest; j+ +)
+                        for (int j = 0; j < keysinsideChest; j++) 
                         {
                             int availableKey = Convert.ToInt32(splitted[j + 2]);
                             chests_keysInside[i].Add(availableKey);

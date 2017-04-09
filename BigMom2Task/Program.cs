@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BigMom2Task
+namespace GMA2Task
 {
     class Program
     {

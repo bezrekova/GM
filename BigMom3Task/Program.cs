@@ -1,16 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BigMom3Task
+namespace GMA3Task
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //!!!Use comma separator for input exp.:right: 123,4  wrong: 123.5 !!!
+            //!!!Use your system specific separator for input { for expl.:right: 123.4  wrong: 123,5} if it is US time zone, 
+            //for Ukraine use comma separator!!!
+            //Console.WriteLine("Type number with comma(',') separator");
             double number = Convert.ToDouble(Console.ReadLine());
             PrintInWords(number);
             Console.ReadKey();
@@ -23,18 +21,19 @@ namespace BigMom3Task
 
         public static void PrintInWords(double num)
         {
-            int dollars = Convert.ToInt32(num);
+            int dollars = Convert.ToInt32(num) - 1;
             int cents = Math.Abs((int)((num - dollars) * (double)100));//Abs to make cents positive
-            if (cents >0) { 
-            Console.WriteLine("{0} {1} {2} {3}", ConvertToText(dollars),"dollars", ConvertToText(cents),"cents");
+            if (cents > 0)
+            {
+                Console.WriteLine("{0} {1} {2} {3}", ConvertToText(dollars), "dollars", ConvertToText(cents), "cents");
             }
             else
             {
                 Console.WriteLine("{0} {1}", ConvertToText(dollars), "dollars");
             }
 
-            }
-        
+        }
+
         private static string ConvertToText(int num)
         {
             string result = " ";
@@ -86,7 +85,7 @@ namespace BigMom3Task
                     result += dozens[num / 10];
                     if (num % 10 > 0)
                     {
-                        result += "-"+ tens[num % 10];
+                        result += "-" + tens[num % 10];
                     }
                 }
             }
